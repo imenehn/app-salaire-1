@@ -1,0 +1,17 @@
+---
+ - name: crete users
+   hosts: all
+   become: yes
+   remote_user: hicham
+   roles:
+    - user
+  
+- name: install serveur web 
+   hosts: web
+   roles:
+    - webserver
+    
+- name: install DataBase
+  hosts: db
+  roles:
+    - database
